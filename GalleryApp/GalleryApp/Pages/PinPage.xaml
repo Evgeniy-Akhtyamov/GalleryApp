@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GalleryApp.Pages"
+             x:Class="GalleryApp.Pages.PinPage"
+             BackgroundImageSource="Background.jpg"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout x:Name="stackLayout" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="GalleryApp - Ваша галерея" 
+                   FontSize="Title" Padding="30,10,30,10" TextColor="LightCyan" 
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>            
+            <Label x:Name="infoMessage" 
+                   FontSize="Small"  Padding="30,5,30,5" TextColor="Red"
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <Label x:Name="pinMessage"  
+                   Padding="30,5,30,5" TextColor="LightCyan" 
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="pinEntry" 
+                   Placeholder="****" 
+                   Keyboard="Default" IsPassword ="True"  WidthRequest="50" 
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

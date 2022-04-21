@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GalleryApp.Pages" 
+             x:Class="GalleryApp.Pages.ImagesListPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout x:Name="stackLayout" Padding="5" >
+            <ListView x:Name="pictureList" RowHeight="85"
+             HasUnevenRows="True" CachingStrategy="RecycleElement" ItemSelected="pictureList_ItemSelected"
+             ItemsSource="{Binding Pictures}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"  Padding="10,0">
+                                <Image Source="{Binding Image}" WidthRequest="55" HeightRequest="80" />
+                                <Label Text="{Binding Name}" VerticalOptions="Center" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>   
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid RowDefinitions="45" Margin="10, 15" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="openButton" Text="📂 Открыть" Clicked="openButton_Clicked" Grid.Column="0" CornerRadius="15"
+                        HorizontalOptions="FillAndExpand" BackgroundColor ="LightGray">                    
+                </Button>
+                <Button x:Name="deleteButton" Text="🗑️ Удалить" Clicked="deleteButton_Clicked" Grid.Column="1" CornerRadius="15"
+                        HorizontalOptions="FillAndExpand" BackgroundColor ="LightGray">                    
+                </Button>
+            </Grid>            
+        </StackLayout>        
+    </ContentPage.Content>
+</ContentPage>
